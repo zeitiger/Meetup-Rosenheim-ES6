@@ -86,7 +86,7 @@
 				<section>
 					<section>
 						<h2>ECMAScript 2016</h2>
-						<p>Neuen Features</p>
+						<p>Neue Features</p>
 					</section>
 					<section>
 						<h2>Exponent-Operator</h2>
@@ -94,7 +94,7 @@
 						<pre><code class="hljs" data-trim>
 (2 ** 3) === 8 // 2^3
 						</code></pre>
-						<p>Old way</p>
+						<p>ES5</p>
 						<pre><code class="hljs" data-trim>
 Math.pow(2, 3) === 8 // 2^3
 						</code></pre>
@@ -105,7 +105,7 @@ Math.pow(2, 3) === 8 // 2^3
 						<pre><code class="hljs" data-trim>
 [1,2,3,4].includes(3) === true
 						</code></pre>
-						<p>Old way</p>
+						<p>ES5</p>
 						<pre><code class="hljs" data-trim>
 [1,2,3,4].indexOf(3) !== -1
 						</code></pre>
@@ -113,9 +113,198 @@ Math.pow(2, 3) === 8 // 2^3
 				</section>
 
 				<section>
-					<img src="http://i.giphy.com/rVSZrFGySmllC.gif" alt="Ist das alles?"/>
+					<h2>Ist das alles?</h2>
+					<img src="http://i.giphy.com/rVSZrFGySmllC.gif" alt="Ist das alles? Bild"/>
 				</section>
 
+				<section>
+					<section>
+					  <h2>ECMA TC39</h2>
+						<img src="http://i.giphy.com/3o6MbbZW1ElQoZt5TO.gif"/>
+					  <p>Die Arbeitsgruppe für den ECMAScript Standard.</p>
+				  </section>
+					<section>
+						<h2>Prozess</h2>
+						<p>Weiterentwicklung des Standards mit Reifegraden.</p>
+					</section>
+							<section><h2>Strawman, Stage 0</h2><p>Eine Idee</p></section>
+							<section><h2>Proposal, Stage 1</h2><p>Diskussionsgrundlage, Polyfill/Demo</p></section>
+							<section><h2>Draft, Stage 2</h2><p>Initiale Spezifikation mit möglichen Lücken</p></section>
+							<section><h2>Candidate, Stage 3</h2><p>Vollständige Spezifikation</p></section>
+							<section><h2>Finished, Stage 4</h2><p>Test-Suite, mindestens 2 Referenz-Implementierungen</p>
+							<p>Stage 4 wird zum Zeitpunkt der jährlichen Standardisierung ECMAScript aufgenommen.</p></section>
+
+				  </section>
+
+					<section>
+						<h2>Und nun?</h2>
+						<img src="http://i.giphy.com/QUmpqPoJ886Iw.gif"/>
+					</section>
+
+					<section>
+						<section>
+							<h2>Stage 4</h2>
+							<img src="http://i.giphy.com/nTqBNQXlEixLa.gif"/>
+							<p>Was kommt sicher in ECMAScript 2017.</p>
+						</section>
+						<section>
+							<h2>Object.values/Object.entries</h2>
+							<pre><code class="hljs" data-trim>
+Object.keys({foo: 42, bar: 23}); // => ['foo', 'bar'], ES6/ES2015
+Object.values({foo: 42, bar: 23}); // => [42, 23]
+Object.entries({foo: 42, bar: 23}); // => [['foo', 42], ['bar', 23]]
+							</code></pre>
+						</section>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2>Stage 3</h2>
+						<img src="http://i.giphy.com/l41m2aEgQwiYNQOIw.gif"/>
+						<p>Was könnte in ECMAScript 2017 sein.</p>
+					</section>
+					<section>
+						<h2>SIMD (Single Instruction Multiple Data)</h2>
+						<p>Parallelisierung von Rechenoperation in Vektoren</p>
+						<pre><code class="hljs" data-trim>
+var a = SIMD.Float32x4(1.0, 2.0, 3.0, 4.0);
+var b = SIMD.Float32x4(5.0, 10.0, 15.0, 20.0);
+var c = SIMD.Float32x4.add(a,b); // => (6.0, 12.0, 18.0, 24.0)
+						</code></pre>
+					</section>
+					<section>
+						<h2>Async/await</h2>
+						<p>Syntax-Sugar für Promise-based Functions.</p>
+						<pre><code class="hljs" data-trim>
+async function foo() {
+  var result = await asyncFunc();
+  return result;
+}
+foo().then((result) => console.log(result));
+						</code></pre>
+						<p>ES6/ES2015</p>
+						<pre><code class="hljs" data-trim>
+function foo() {
+  return Promise.resolve().then(() => {
+    return asyncFunc();
+  }).then((result) => {
+    return result;
+  });
+}
+foo().then((result) => console.log(result));
+						</code></pre>
+					</section>
+					<section>
+						<h2>String.padStart/String.padEnd</h2>
+						<pre><code class="hljs" data-trim>
+'bar'.padStart(6, 'foo'); // => 'foobar'
+'bar'.padStart(6); // => '   bar'
+'foo'.padEnd(6, 'bar'); // => 'foobar'
+'foo'.padEnd(6); // => 'foo   '
+''.padStart(10, 'abc'); // => 'abcabcabca'
+						</code></pre>
+					</section>
+					<section>
+						<h2>Trailing function commas</h2>
+						<p>Überschüssige Kommas verursachen keinen Syntax Error.</p>
+						<pre><code class="hljs" data-trim>
+foo(
+  'bar',
+  'baz', // current => SyntaxError
+);
+						</code></pre>
+					</section>
+					<section>
+						<h2>Weitere Änderungen</h2>
+						<h3>Überarbeitung Function.toString</h3>
+						<p>Besseres Debugging</p>
+						<h3>Object.getOwnPropertyDescriptors</h3>
+						<p>Metaprogramming/Reflection API</p>
+					</section>
+				</section>
+			</section>
+
+
+<section>
+	<section>
+		<h2>Stage 2</h2>
+		<img src="http://i.giphy.com/13NUOwOLq0NJug.gif"/>
+		<p>Kommt irgendwann oder auch nicht.</p>
+	</section>
+	<section>
+		<h2>Async Iterators</h2>
+		<p>Wie normale Iteratoren nur mit Promises und Syntax-Sugar.</p>
+		<pre><code class="hljs" data-trim>
+async function* readLines(path) {
+  let file = await fileOpen(path);
+  try {
+    while (!file.EOF)
+      yield file.readLine();
+  } finally {
+    await file.close();
+  }
+}
+for await (let line of readLines(path)) {
+  console.log(line);
+}
+		</code></pre>
+	</section>
+	<section>
+		<h2>Object Rest/Spread Properties</h2>
+		<p>Erweiterung der Destructering Syntax aus ES6/ES2015</p>
+		<pre><code class="hljs" data-trim>
+var {x, y, ...z} = {x:1, y:2, a:3, b:4} // => z === {a:3, b:4}
+var n = {y, ...z}; // => n === {y:2, a:3, b:4}
+		</code></pre>
+	</section>
+
+	<section>
+		<h2>Weitere Änderungen</h2>
+		<h3>function.sent</h3>
+		<p>Metaproperty für Generator Function</p>
+		<h3>System.global</h3>
+		<p>Einheitlicher Zugriff auf global</p>
+		<h3>SharedMemory und Atomics</h3>
+		<p>Neue APIs für Worker Prozesse</p>
+	</section>
+</section>
+
+<section>
+	<section>
+		<h2>Stage 1</h2>
+		<img src="http://i.giphy.com/l0zAiJHyg0fMA.gif"/>
+		<p>Entwürfe</p>
+	</section>
+	<section>
+		<h2>Kombinierte import-export Statements</h2>
+	</section>
+	<section>
+		<h2>Class und Property Decorator</h2>
+	</section>
+	<section>
+		<h2>Observable</h2>
+	</section>
+	<section>
+		<h2>String.trimLeft und String.trimRight</h2>
+	</section>
+	<section>
+		<h2>Class Property Declaration</h2>
+	</section>
+	<section>
+		<h2>String.matchAll</h2>
+	</section>
+	<section>
+		<h2>Private Fields</h2>
+	</section>
+	<section>
+		<h2>WeakRefs</h2>
+	</section>
+	<section>
+		<h2>Forzen Realms</h2>
+	</section>
+</section>
+</section>
 			</div>
 
 		</div>
