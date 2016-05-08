@@ -7,14 +7,20 @@
   transform: scale(2.1);
   transform-origin: top;
 }
-
-.handle[href] img {
-  max-height: 1em;
+img.logo[alt], .handle[href] img {
   border: 0;
   margin: 0;
   background: inherit;
+  box-shadow: inherit;
+}
+img.logo[alt] {
+  max-height: 6em;
+}
+.handle[href] img {
+  max-height: 1em;
   max-width: 1em;
 }
+
 .progress.progress.progress {
   height: 10px;
 }
